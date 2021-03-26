@@ -17,7 +17,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        grabBMP("app/src/main/resources/img.bmp");
+        writeBMP("app/src/main/resources/img.bmp","app/src/main/resources/img2.bmp" );
     }
 
 
@@ -41,5 +42,21 @@ public class App {
             }
         }
         return bitmapArray;
+    }
+    public static void writeBMP(String inputPath, String outputPath) {
+        BufferedImage outputImg = null;
+        try {
+
+
+            outputImg = ImageIO.read(new File(inputPath));
+            ImageIO.write(outputImg, "bmp", new File(outputPath));
+        } catch (IOException e) {
+
+        }
+//        mapping the bitmap into a 2d array
+
+
+
+
     }
 }
